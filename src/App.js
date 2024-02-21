@@ -1,16 +1,13 @@
 //import logo from './logo.svg';
-import './App.css';
-
-function App() {
-    // declare variable 
-    const speakerName = 'Robert Hendricks'
+//import './App.css';
+import React from 'react';
+import SpeakerProfile from './components/SpeakerProfile';
+function App(){
   return (
-    <div>
-      <h1>Welcome to Bizza Platform, {speakerName} </h1>
-
-    </div>
-  
+  <div style={{backgroundColor: 'gray', margin:20,
+  color:'white'}}>
+  <SpeakerProfile />
+  </div>
   );
-}
-
-export default App;
+  }
+  export default App;
