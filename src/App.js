@@ -2,9 +2,11 @@
 import './App.css';
 
 function App() {
+    // declare variable 
+    const speakerName = 'Robert Hendricks'
   return (
     <div>
-      <h1>Welcome to Bizza Platform!</h1>
+      <h1>Welcome to Bizza Platform, {speakerName} </h1>
 
     </div>
   
