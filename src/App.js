@@ -1,4 +1,6 @@
 //import logo from './logo.svg';
+
+// write regular javascript functions and hook into react hooks for statefulness 
 import React from 'react';
 class App extends React.Component{
   constructor(props)
