@@ -1,6 +1,7 @@
 //import logo from './logo.svg';
 //import './App.css';
 import React from 'react';
+import SearchSpeaker from './components/SearcSpeaker';
 //import SpeakerProfile from './components/SpeakerProfile';
 
 
@@ -30,6 +31,8 @@ function App(){
   name="Robert Hendricks"
   jobTitle='Project Manager, Web Developer'
   company="Bujisoft" />
+
+  <SearchSpeaker />
   </div>
     
     </>
