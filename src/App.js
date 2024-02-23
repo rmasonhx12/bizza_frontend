@@ -1,27 +1,34 @@
 //import logo from './logo.svg';
 
-// write regular javascript functions and hook into react hooks for statefulness 
-import React from 'react';
-class App extends React.Component{
-  constructor(props)
-  {
-    super(props);
-    this.state={
-      name:"Andrew", }
-this.updateNameState=this.updateNameState.bind(this);
-}
-  updateNameState(){
-    this.setState({
-      name:"Andrew Peter"});
-  }
-render()
-  {
-    return(
+// usestate hook
+import React, {useState} from 'react';
+
+const App = () => {
+  const [count, setCount] = useState(0);
+  const handleIncrementByTen = () => {
+    setCount(count + 10);
+  };
+
+  const handleDecrementByTen = () => {
+    setCount(count-10);
+  };
+
+  const resetCountHandler = () => {
+    setCount(0);
+  };
+   return (
     <div>
-    <p>{this.state.name}</p>
-    <button onClick={()=>this.updateNameState()}>Display Full Name</button>
+      Initial Count: {count}
+      <hr />
+      <div>
+        <button type ="button" onClick={handleIncrementByTen}>Increment by 10</button>
+        <button type ="button" onClick={handleDecrementByTen}>Decrement by 10</button>
+        <button type ="button" onClick={resetCountHandler}>Reset</button>
+        
+
+      </div>
     </div>
-      );
-  }
+   )
 }
+
  export default App;
