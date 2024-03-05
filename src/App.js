@@ -1,34 +1,37 @@
 //import logo from './logo.svg';
 
 // pass data from parent to child
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 const App = () => {
-  const [count, setCount] = useState(0);
-  const handleIncrementByTen = () => {
-    setCount(count + 10);
-  };
+  const [data, setData] = useState([]);
+  const getSpeakers = ()=>{
+    fetch("https://jsonplaceholder.typicode.com/users")
+    .then((response) => response.json())
+    .then((data) => {
+      setData( data);
+    })
+  }
+  useEffect(() => {
+    getSpeakers()
+  },[]);
+  return (
+    <>
+    <h1>Displaying Speakers Information</h1>
+    <ul>
+      {data.map(speaker => (
+        <li key={speaker.id}>
+          {speaker.name}, <em> {speaker.email}</em>
+        </li>
+      ))}
+    </ul>
+    </>
+  );
 
-  const handleDecrementByTen = () => {
-    setCount(count-10);
-  };
-
-  const resetCountHandler = () => {
-    setCount(0);
-  };
-   return (
-    <div>
-      Initial Count: {count}
-      <hr />
-      <div>
-        <button type ="button" onClick={handleIncrementByTen}>Increment by 10</button>
-        <button type ="button" onClick={handleDecrementByTen}>Decrement by 10</button>
-        <button type ="button" onClick={resetCountHandler}>Reset</button>
-        
-
-      </div>
-    </div>
-   )
-}
+};
 
  export default App;
+
+
+
+ 
