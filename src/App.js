@@ -1,6 +1,6 @@
 //import logo from './logo.svg';
 
-// usestate hook
+// pass data from parent to child
 import React, {useState} from 'react';
 
 const App = () => {
